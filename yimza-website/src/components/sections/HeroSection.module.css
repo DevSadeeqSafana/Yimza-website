@@ -1,0 +1,266 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--gradient-hero);
+  padding: 120px 0 80px;
+}
+
+.gradientOrb1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,150,64,0.12) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.gradientOrb2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,150,64,0.08) 0%, transparent 70%);
+  bottom: -50px;
+  left: -100px;
+  pointer-events: none;
+}
+
+.gradientOrb3 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(22, 32, 53, 0.8) 0%, transparent 70%);
+  top: 40%;
+  left: 40%;
+  pointer-events: none;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Content */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.heading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  display: flex;
+  flex-direction: column;
+}
+
+.headingLine {
+  display: block;
+}
+
+.subtext {
+  font-size: 1.05rem;
+  color: #94A3B8;
+  line-height: 1.8;
+  max-width: 500px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 8px;
+}
+
+.highlight {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #64748B;
+  font-weight: 500;
+}
+
+.highlightIcon {
+  color: #B89640;
+}
+
+/* Visual */
+.visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px;
+}
+
+.logoCard {
+  position: relative;
+  z-index: 2;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-16px); }
+}
+
+.logoRing {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(184,150,64,0.2), rgba(184,150,64,0.05));
+  border: 1px solid rgba(184,150,64,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 60px rgba(184,150,64,0.1),
+    inset 0 0 60px rgba(184,150,64,0.05);
+}
+
+.logoRingInner {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1E293B, #162035);
+  border: 1.5px solid rgba(184,150,64,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+.logoImage {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Floating Badges */
+.floatBadge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(15,23,42,0.9);
+  border: 1px solid rgba(184,150,64,0.25);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #E2E8F0;
+  white-space: nowrap;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.badge1 {
+  top: 30px;
+  right: -20px;
+  animation: float 3.5s ease-in-out infinite 0.5s;
+}
+
+.badge2 {
+  bottom: 60px;
+  right: -40px;
+  animation: float 4.5s ease-in-out infinite 1s;
+}
+
+.badge3 {
+  bottom: 20px;
+  left: -20px;
+  animation: float 4s ease-in-out infinite 0.3s;
+}
+
+/* Orbit Rings */
+.orbitRing1 {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  border: 1px dashed rgba(184,150,64,0.1);
+  animation: spin-slow 20s linear infinite;
+  pointer-events: none;
+}
+
+.orbitRing2 {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  border: 1px dashed rgba(184,150,64,0.06);
+  animation: spin-slow 30s linear infinite reverse;
+  pointer-events: none;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.scrollLine {
+  width: 40px;
+  height: 1px;
+  background: rgba(184,150,64,0.4);
+}
+
+.scrollIndicator span {
+  font-size: 12px;
+  color: #475569;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    text-align: center;
+  }
+  .visual {
+    min-height: 300px;
+  }
+  .actions { justify-content: center; }
+  .highlights { justify-content: center; }
+  .subtext { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .logoRing { width: 220px; height: 220px; }
+  .logoRingInner { width: 170px; height: 170px; }
+  .logoImage { width: 120px; height: 120px; }
+  .orbitRing1 { width: 300px; height: 300px; }
+  .orbitRing2 { width: 380px; height: 380px; }
+}

@@ -1,0 +1,249 @@
+.hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--gradient-hero);
+  padding: 140px 0 80px;
+}
+
+.heroGlow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,150,64,0.1) 0%, transparent 60%);
+  top: -200px;
+  right: -200px;
+  pointer-events: none;
+}
+
+.heroContent {
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.heroTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  letter-spacing: -1px;
+}
+
+.heroSubtext {
+  font-size: 1.05rem;
+  color: #94A3B8;
+  line-height: 1.8;
+}
+
+/* What We Do */
+.whatGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.whatImage {
+  position: relative;
+  height: 480px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(184,150,64,0.2);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+}
+
+.whatOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15,23,42,0.2) 0%, rgba(184,150,64,0.05) 50%, rgba(15,23,42,0.5) 100%);
+}
+
+.whatBadge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: rgba(15,23,42,0.9);
+  border: 1px solid rgba(184,150,64,0.3);
+  border-radius: 14px;
+  padding: 16px 20px;
+  backdrop-filter: blur(12px);
+}
+
+.whatBadgeNum {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #B89640, #D4AF5A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.whatBadgeLabel {
+  font-size: 12px;
+  color: #64748B;
+  margin-top: 4px;
+  display: block;
+}
+
+.whatContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.checkList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.checkItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+/* Mission / Vision */
+.mvHeader {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.mvGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mvCard {
+  padding: 48px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.mvCardAccent {
+  border-color: rgba(184,150,64,0.3) !important;
+  box-shadow: 0 0 40px rgba(184,150,64,0.08);
+}
+
+.mvIconWrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(184,150,64,0.2);
+}
+
+.mvTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.mvText {
+  font-size: 15px;
+  color: #64748B;
+  line-height: 1.9;
+}
+
+/* Values */
+.valuesHeader {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.valueCard {
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.valueTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.valueDesc {
+  font-size: 14px;
+  color: #64748B;
+  line-height: 1.7;
+}
+
+/* FAQ */
+.faqHeader {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faqCard {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faqQ {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #E2E8F0;
+  line-height: 1.4;
+}
+
+.faqA {
+  font-size: 14px;
+  color: #64748B;
+  line-height: 1.8;
+}
+
+@media (max-width: 960px) {
+  .whatGrid { grid-template-columns: 1fr; gap: 48px; }
+  .whatImage { height: 360px; }
+  .mvGrid { grid-template-columns: 1fr; }
+  .valuesGrid { grid-template-columns: repeat(2, 1fr); }
+  .faqGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .valuesGrid { grid-template-columns: 1fr; }
+}
