@@ -1,6 +1,3 @@
 {
-  "buildCommand": "cd yimza-website && npm run build",
-  "outputDirectory": "yimza-website/.next",
-  "installCommand": "cd yimza-website && npm install",
   "framework": "nextjs"
 }
