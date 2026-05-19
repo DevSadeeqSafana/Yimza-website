@@ -1,0 +1,14 @@
+{
+  "name": "yimza-monorepo",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "cd yimza-website && npm run dev",
+    "build": "cd yimza-website && npm run build",
+    "start": "cd yimza-website && npm run start"
+  },
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
