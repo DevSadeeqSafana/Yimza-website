@@ -13,7 +13,13 @@ const services = [
 const company = [
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
+  { label: "Products", href: "/products" },
   { label: "Contact", href: "/contact" },
+];
+
+const products = [
+  { label: "YimzaCare (HMS)", href: "/products#yimzacare" },
+  { label: "YimzaEdu (SMS)", href: "/products#yimzaedu" },
 ];
 
 const socials = [
@@ -107,6 +113,20 @@ export default function Footer() {
                   <li key={s}>
                     <Link href="/services" className={styles.colLink}>
                       <ArrowRight size={13} /> {s}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Products */}
+            <div className={styles.col}>
+              <h4 className={styles.colTitle}>Products</h4>
+              <ul className={styles.colList}>
+                {products.map((p) => (
+                  <li key={p.label}>
+                    <Link href={p.href} className={styles.colLink}>
+                      <ArrowRight size={13} /> {p.label}
                     </Link>
                   </li>
                 ))}

@@ -57,7 +57,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section style={{ background: "#0E1829", paddingBottom: 40 }}>
+      <section style={{ background: "var(--navy-light)", paddingBottom: 40 }}>
         <div className="container">
           {services.map(({ id, icon: Icon, tag, title, desc, highlights, delivery }, i) => (
             <div key={id} id={id} className={`${styles.serviceRow} ${i % 2 !== 0 ? styles.reversed : ""}`}>
@@ -91,7 +91,7 @@ export default function ServicesPage() {
               <span className="section-label">The Technology You Need</span>
               <div className="gold-line" />
               <h2 className="section-title" style={{ marginTop: 16 }}>Smart Solutions <span>Built for You</span></h2>
-              <p style={{ color: "#94A3B8", lineHeight: 1.9, fontSize: "1rem", marginTop: 16, maxWidth: 520 }}>
+              <p style={{ color: "var(--text-secondary)", lineHeight: 1.9, fontSize: "1rem", marginTop: 16, maxWidth: 520 }}>
                 We deliver smart, scalable, and user-friendly solutions that help individuals and businesses grow faster. From training to technical guidance, we provide continuous support every step of the way.
               </p>
             </div>

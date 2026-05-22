@@ -53,7 +53,7 @@ export default function AboutPage() {
       </section>
 
       {/* What We Do */}
-      <section className="section" style={{ background: "#0E1829" }}>
+      <section className="section" style={{ background: "var(--navy-light)" }}>
         <div className="container">
           <div className={styles.whatGrid}>
             <div className={styles.whatImage}>
@@ -71,14 +71,14 @@ export default function AboutPage() {
               <h2 className="section-title">
                 Transforming Ideas Into <span>Impactful Solutions</span>
               </h2>
-              <p style={{ color: "#94A3B8", lineHeight: 1.9, fontSize: "1rem", marginTop: 16 }}>
+              <p style={{ color: "var(--text-secondary)", lineHeight: 1.9, fontSize: "1rem", marginTop: 16 }}>
                 Yimza IT Consultancy Services is a dynamic firm dedicated to equipping individuals,
                 institutions, and organizations with the tools to thrive in today&apos;s digital world.
                 Through tailored training, innovative research, academic support, and expert IT
                 consultancy, we transform ideas into impactful solutions that drive personal,
                 educational, and business success.
               </p>
-              <p style={{ color: "#64748B", lineHeight: 1.9, fontSize: "0.95rem", marginTop: 12 }}>
+              <p style={{ color: "var(--text-muted)", lineHeight: 1.9, fontSize: "0.95rem", marginTop: 12 }}>
                 With a passion for driving transformation, our services span across training
                 workshops, research and development, academic support, and general IT consultancy —
                 always with a focus on practical results and long-term value.
@@ -97,7 +97,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="section" style={{ background: "#0F172A" }}>
+      <section className="section" style={{ background: "var(--navy)" }}>
         <div className="grid-bg" style={{ opacity: 0.4 }} />
         <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <div className={styles.mvHeader}>
@@ -135,7 +135,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="section" style={{ background: "#0E1829" }}>
+      <section className="section" style={{ background: "var(--navy-light)" }}>
         <div className="container">
           <div className={styles.valuesHeader}>
             <span className="section-label">What Drives Us</span>
@@ -159,7 +159,7 @@ export default function AboutPage() {
       </section>
 
       {/* FAQ */}
-      <section className="section" style={{ background: "#0F172A" }}>
+      <section className="section" style={{ background: "var(--navy)" }}>
         <div className="container">
           <div className={styles.faqHeader}>
             <span className="section-label">FAQ</span>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -8,30 +8,30 @@
 
 :root {
   /* Brand Colors */
-  --navy: #0F172A;
-  --navy-light: #1E293B;
-  --navy-mid: #162035;
+  --navy: #FFFFFF;
+  --navy-light: #F8F9FA;
+  --navy-mid: #F1F5F9;
   --gold: #B89640;
   --gold-light: #D4AF5A;
   --gold-dark: #8A6F2E;
-  --gold-glow: rgba(184, 150, 64, 0.15);
-  --gold-glow-strong: rgba(184, 150, 64, 0.3);
+  --gold-glow: rgba(184, 150, 64, 0.08);
+  --gold-glow-strong: rgba(184, 150, 64, 0.15);
 
   /* Neutral */
-  --white: #FFFFFF;
-  --off-white: #F8F7F4;
-  --text-muted: #94A3B8;
-  --text-secondary: #CBD5E1;
-  --border: rgba(184, 150, 64, 0.15);
-  --border-subtle: rgba(255,255,255,0.07);
+  --white: #0B0F19;
+  --off-white: #0F172A;
+  --text-muted: #475569;
+  --text-secondary: #334155;
+  --border: rgba(184, 150, 64, 0.18);
+  --border-subtle: rgba(0, 0, 0, 0.06);
 
   /* Gradients */
-  --gradient-hero: linear-gradient(135deg, #0F172A 0%, #162035 50%, #0F172A 100%);
+  --gradient-hero: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 50%, #FFFFFF 100%);
   --gradient-gold: linear-gradient(135deg, #B89640, #D4AF5A, #B89640);
-  --gradient-card: linear-gradient(145deg, rgba(30,41,59,0.9), rgba(15,23,42,0.95));
+  --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.98));
 
   /* Typography */
-  --font-display: 'Syne', sans-serif;
+  --font-display: 'Space Grotesk', 'Syne', sans-serif;
   --font-body: 'Inter', sans-serif;
 
   /* Spacing */
@@ -167,12 +167,13 @@ body {
   border-radius: 16px;
   backdrop-filter: blur(20px);
   transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
 .glass-card:hover {
   border-color: rgba(184, 150, 64, 0.4);
   transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px var(--gold-glow);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07), 0 0 40px var(--gold-glow);
 }
 
 /* ---- Animations ---- */

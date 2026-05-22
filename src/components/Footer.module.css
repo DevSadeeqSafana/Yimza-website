@@ -1,12 +1,12 @@
 .footer {
-  background: #0A1120;
-  border-top: 1px solid rgba(184,150,64,0.1);
+  background: var(--navy-light);
+  border-top: 1px solid var(--border-subtle);
 }
 
 /* CTA Banner */
 .ctaBanner {
-  background: linear-gradient(135deg, #162035 0%, #1a2a4a 50%, #162035 100%);
-  border-bottom: 1px solid rgba(184,150,64,0.15);
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 50%, var(--navy) 100%);
+  border-bottom: 1px solid var(--border-subtle);
   padding: 60px 0;
 }
 
@@ -19,16 +19,16 @@
 }
 
 .ctaTitle {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(1.4rem, 3vw, 2rem);
   font-weight: 700;
-  color: #fff;
+  color: var(--white);
   margin-bottom: 8px;
 }
 
 .ctaText {
   font-size: 15px;
-  color: #94A3B8;
+  color: var(--text-muted);
 }
 
 /* Main */
@@ -38,10 +38,10 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
   gap: 48px;
   padding-bottom: 60px;
-  border-bottom: 1px solid rgba(184,150,64,0.08);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 /* Brand */
@@ -62,10 +62,10 @@
 }
 
 .logoName {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display);
   font-size: 18px;
   font-weight: 800;
-  color: #fff;
+  color: var(--white);
 }
 
 .logoSub {
@@ -78,7 +78,7 @@
 
 .brandDesc {
   font-size: 14px;
-  color: #64748B;
+  color: var(--text-muted);
   line-height: 1.8;
   margin-bottom: 24px;
 }
@@ -112,10 +112,10 @@
 .col {}
 
 .colTitle {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display);
   font-size: 14px;
   font-weight: 700;
-  color: #fff;
+  color: var(--white);
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -133,7 +133,7 @@
   align-items: center;
   gap: 6px;
   font-size: 14px;
-  color: #64748B;
+  color: var(--text-muted);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -164,7 +164,7 @@
 
 .contactLink {
   font-size: 14px;
-  color: #64748B;
+  color: var(--text-muted);
   text-decoration: none;
   transition: color 0.2s ease;
   line-height: 1.5;
@@ -186,7 +186,7 @@
 
 .copyright {
   font-size: 13px;
-  color: #374151;
+  color: var(--text-secondary);
 }
 
 .bottomLinks {
@@ -196,7 +196,7 @@
 
 .bottomLink {
   font-size: 13px;
-  color: #374151;
+  color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.2s ease;
 }
