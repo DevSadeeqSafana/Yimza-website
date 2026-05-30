@@ -1,13 +1,71 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { 
   Shield, GraduationCap, CheckCircle2,
-  Settings, Layers, RefreshCw, Smartphone, BarChart3, Database 
+  Settings, Layers, RefreshCw, Smartphone, BarChart3, Database,
+  ArrowRight, Activity, Calendar, FileText, ShoppingCart, UserCheck, BookOpen, CreditCard, Laptop
 } from "lucide-react";
 import styles from "./products.module.css";
 
+const yimzaCareModules = [
+  {
+    icon: FileText,
+    title: "Electronic Medical Records (EMR)",
+    desc: "A highly secure database that tracks complete patient journeys. Store clinical histories, laboratory results, past prescriptions, and diagnostic notes in compliance with medical data privacy standard practices.",
+    features: ["Clinical templates for doctors", "ICD-10 diagnostic coding support", "Vitals history charts", "Lab and imaging order logging"]
+  },
+  {
+    icon: Calendar,
+    title: "Smart Appointment & Queue Engine",
+    desc: "Optimize doctor schedules and reduce patient wait times. Patients can book slots online, which dynamically populate the department waitlist. The system automatically alerts patients via SMS/email.",
+    features: ["Physician slot configurator", "Walk-in & online reservation merge", "Real-time queue dashboards", "Automated appointment reminders"]
+  },
+  {
+    icon: ShoppingCart,
+    title: "Pharmacy & Inventory Suite",
+    desc: "Avoid critical stock-outs with live pharmacy inventory management. Monitor drug batches, track purchase invoice records, and configure auto-reorder thresholds for critical medications.",
+    features: ["Batch expiration date alerts", "Prescription fulfillment checks", "Supplier purchase order logs", "Multi-store pharmacy tracking"]
+  },
+  {
+    icon: Activity,
+    title: "Ward & Bed Allocation Manager",
+    desc: "Provide clinical staff with a visual dashboard of ward occupancy. Seamlessly track patient admission timelines, record daily doctor visits, and automate billing calculations based on ward types.",
+    features: ["Visual bed status panels", "Ward nurse duty logs", "Ward transfer history records", "Discharge clearance workflows"]
+  }
+];
+
+const yimzaEduModules = [
+  {
+    icon: UserCheck,
+    title: "Unified Student Information Registry",
+    desc: "A secure repository storing student files from initial application to graduation. Generate digital transcripts, track student disciplinary notes, and maintain full family-student mapping.",
+    features: ["Digital application pipeline", "Biodata & medical record storage", "Alumni tracking database", "Automatic student ID generator"]
+  },
+  {
+    icon: BookOpen,
+    title: "Academic Gradebooks & Exams",
+    desc: "Simplify terminal reporting for teachers. Define customized grading rubrics, record continuous assessment scores, calculate GPAs, and export premium PDF report sheets with a single click.",
+    features: ["Custom grading scale builder", "Mass grade entry interfaces", "Subject performance analytics", "Parent/Student grade release control"]
+  },
+  {
+    icon: CreditCard,
+    title: "Fee Collections & Billing Auditor",
+    desc: "Automate tuition collection and reduce administrative overhead. Send automated fee invoices to parent emails, accept payments via credit cards or mobile banking, and generate daily reconciliation logs.",
+    features: ["Installment payment plans", "Automated late fee alerts", "Bank statement reconcilers", "Auditable revenue dashboards"]
+  },
+  {
+    icon: Smartphone,
+    title: "Parent & Teacher Portal Apps",
+    desc: "Bridge the communication gap. Parents can track attendance, download newsletters, view invoices, and message teachers directly through secure, cross-device portals.",
+    features: ["Attendance tracking alerts", "Assignment submission panels", "School calendar updates", "In-app direct messaging logs"]
+  }
+];
+
 export default function ProductsPage() {
+  const [activeTab, setActiveTab] = useState<"care" | "edu">("care");
+
   return (
     <div className={styles.wrapper}>
       {/* Hero Header */}
@@ -15,149 +73,175 @@ export default function ProductsPage() {
         <div className="grid-bg" style={{ opacity: 0.2 }} />
         <div className="container">
           <div className={styles.heroInner}>
-            <span className="badge animate-fade-up">Enterprise-Grade Solutions</span>
+            <span className="badge animate-fade-up">Enterprise-Grade Systems</span>
             <h1 className={styles.title}>
-              White-Labelable <span>Management Systems</span> Built for Scale
+              White-Labelable <span>Management Platforms</span> Built for Scale
             </h1>
             <p className={styles.subtitle}>
               We develop robust, responsive management systems designed to simplify complex operational workflows. Easily adapt, customize, and white-label our products to elevate your organization&apos;s digital experience.
             </p>
             <div className={styles.heroActions}>
-              <Link href="#hms" className="btn btn-primary">YimzaCare (HMS)</Link>
-              <Link href="#sms" className="btn btn-outline">YimzaEdu (SMS)</Link>
+              <button 
+                onClick={() => {
+                  setActiveTab("care");
+                  document.getElementById("modules-section")?.scrollIntoView({ behavior: "smooth" });
+                }} 
+                className={`btn ${activeTab === "care" ? "btn-primary" : "btn-outline"}`}
+              >
+                YimzaCare (HMS)
+              </button>
+              <button 
+                onClick={() => {
+                  setActiveTab("edu");
+                  document.getElementById("modules-section")?.scrollIntoView({ behavior: "smooth" });
+                }} 
+                className={`btn ${activeTab === "edu" ? "btn-primary" : "btn-outline"}`}
+              >
+                YimzaEdu (SMS)
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Hospital Management System Section */}
-      <section className={styles.productSection} id="yimzacare">
+      {/* Main Tabbed Core Modules Section */}
+      <section className={styles.modulesSection} id="modules-section">
         <div className="container">
-          <div className={styles.productGrid} id="hms">
-            {/* Visual Column */}
-            <div className={styles.visualColumn}>
-              <div className={styles.logoRing}>
-                <Image 
-                  src="/YimzaCare.jpeg" 
-                  alt="YimzaCare HMS Logo" 
-                  width={220} 
-                  height={220} 
-                  className={styles.productLogo}
-                  priority
-                />
-              </div>
-              <div className={styles.accentBadge}>
-                <Shield size={16} />
-                <span>Secure & Compliant</span>
-              </div>
-            </div>
-
-            {/* Content Column */}
-            <div className={styles.contentColumn}>
-              <span className={styles.tag}>Healthcare System</span>
-              <h2 className={styles.productTitle}>YimzaCare</h2>
-              <h3 className={styles.productSubtitle}>Comprehensive Hospital Management System</h3>
-              <p className={styles.productDesc}>
-                YimzaCare is a state-of-the-art Hospital Management System designed to digitize healthcare ecosystems. It streamlines the patient care journey from admission to recovery, enabling doctors, nurses, pharmacists, and administrators to collaborate on a single secure dashboard.
-              </p>
-
-              <div className={styles.featuresGrid}>
-                <div className={styles.featureCard}>
-                  <CheckCircle2 className={styles.checkIcon} size={18} />
-                  <div>
-                    <h4>Electronic Medical Records (EMR)</h4>
-                    <p>Highly secure patient data storage with histories, lab logs, and diagnosis logs.</p>
-                  </div>
-                </div>
-                <div className={styles.featureCard}>
-                  <CheckCircle2 className={styles.checkIcon} size={18} />
-                  <div>
-                    <h4>Appointment Booking</h4>
-                    <p>Streamlined slots scheduling for physicians with automatic SMS or email alerts.</p>
-                  </div>
-                </div>
-                <div className={styles.featureCard}>
-                  <CheckCircle2 className={styles.checkIcon} size={18} />
-                  <div>
-                    <h4>Pharmacy & Inventory</h4>
-                    <p>Track prescription pipelines, stock alerts, and automated reorder milestones.</p>
-                  </div>
-                </div>
-                <div className={styles.featureCard}>
-                  <CheckCircle2 className={styles.checkIcon} size={18} />
-                  <div>
-                    <h4>Billing & Ward Logs</h4>
-                    <p>Detailed ward allocation tracking, insurance integration, and invoice generation.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className={styles.tabsHeader}>
+            <span className="section-label">System Breakdown</span>
+            <div className="gold-line center" />
+            <h2 className="section-title text-center" style={{ textAlign: "center" }}>
+              Explore <span>Core System</span> Modules
+            </h2>
+            <p className="section-subtitle text-center" style={{ margin: "16px auto 0", textAlign: "center" }}>
+              Click on a platform below to inspect the deep architectural modules and workflows engineered for each system.
+            </p>
           </div>
-        </div>
-      </section>
 
-      {/* School Management System Section */}
-      <section className={styles.productSection} style={{ background: "var(--navy-light)" }} id="yimzaedu">
-        <div className="container">
-          <div className={styles.productGrid} id="sms">
-            {/* Content Column */}
-            <div className={`${styles.contentColumn} ${styles.order2}`}>
-              <span className={styles.tag}>Education System</span>
-              <h2 className={styles.productTitle}>YimzaEdu</h2>
-              <h3 className={styles.productSubtitle}>Comprehensive School Management System</h3>
-              <p className={styles.productDesc}>
-                YimzaEdu is an interactive, unified School Management System designed to empower educational institutions. It facilitates administrative workflows, automates fee tracking, provides portal access for teachers and parents, and delivers insights to elevate educational experiences.
-              </p>
-
-              <div className={styles.featuresGrid}>
-                <div className={styles.featureCard}>
-                  <CheckCircle2 className={styles.checkIcon} size={18} />
-                  <div>
-                    <h4>Student & Parent Portals</h4>
-                    <p>Interactive portals for viewing grades, attendance, homework, and schedules in real-time.</p>
-                  </div>
-                </div>
-                <div className={styles.featureCard}>
-                  <CheckCircle2 className={styles.checkIcon} size={18} />
-                  <div>
-                    <h4>Academics & Gradebooks</h4>
-                    <p>Flexible grade tracking, report cards builder, and curriculum mapping interfaces.</p>
-                  </div>
-                </div>
-                <div className={styles.featureCard}>
-                  <CheckCircle2 className={styles.checkIcon} size={18} />
-                  <div>
-                    <h4>Finance & Fee Tracking</h4>
-                    <p>Automate invoice distribution, fee collections, receipting, and financial audits.</p>
-                  </div>
-                </div>
-                <div className={styles.featureCard}>
-                  <CheckCircle2 className={styles.checkIcon} size={18} />
-                  <div>
-                    <h4>Admissions & Registry</h4>
-                    <p>Complete digital applicant tracking system, online enrollment, and unified directories.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Visual Column */}
-            <div className={`${styles.visualColumn} ${styles.order1}`}>
-              <div className={styles.logoRing}>
-                <Image 
-                  src="/YimzaEdu.jpeg" 
-                  alt="YimzaEdu SMS Logo" 
-                  width={220} 
-                  height={220} 
-                  className={styles.productLogo}
-                />
-              </div>
-              <div className={styles.accentBadge}>
-                <GraduationCap size={16} />
-                <span>Next-Gen Academics</span>
-              </div>
-            </div>
+          {/* Tabs Selector */}
+          <div className={styles.tabsSelector}>
+            <button 
+              className={`${styles.tabBtn} ${activeTab === "care" ? styles.activeTab : ""}`}
+              onClick={() => setActiveTab("care")}
+            >
+              <Shield size={18} /> YimzaCare (Hospital Management)
+            </button>
+            <button 
+              className={`${styles.tabBtn} ${activeTab === "edu" ? styles.activeTab : ""}`}
+              onClick={() => setActiveTab("edu")}
+            >
+              <GraduationCap size={18} /> YimzaEdu (School Management)
+            </button>
           </div>
+
+          {/* YimzaCare Platform Details */}
+          {activeTab === "care" && (
+            <div className={styles.platformDetails}>
+              <div className={styles.platformHeader}>
+                <div className={styles.platformLogoCol}>
+                  <Image 
+                    src="/YimzaCare.jpeg" 
+                    alt="YimzaCare HMS Logo" 
+                    width={180} 
+                    height={180} 
+                    className={styles.productLogo}
+                    priority
+                  />
+                  <div className={styles.accentBadge}>
+                    <Shield size={14} />
+                    <span>Secure & HIPAA-Compliant</span>
+                  </div>
+                </div>
+                <div className={styles.platformDescCol}>
+                  <span className={styles.tag}>Clinical Ecosystem</span>
+                  <h3 className={styles.platformName}>YimzaCare HMS</h3>
+                  <p className={styles.platformText}>
+                    YimzaCare is a comprehensive hospital information management platform designed to automate clinical, financial, and inventory processes. It provides medical directors, doctors, nurses, and pharmacists with unified patient dashboards, ensuring clinical decisions are backed by real-time health metrics.
+                  </p>
+                </div>
+              </div>
+
+              {/* Modules Grid */}
+              <div className={styles.modulesGrid}>
+                {yimzaCareModules.map((mod) => {
+                  const Icon = mod.icon;
+                  return (
+                    <div key={mod.title} className={styles.moduleCard}>
+                      <div className={styles.moduleHeader}>
+                        <div className={styles.iconBox}>
+                          <Icon size={20} />
+                        </div>
+                        <h4>{mod.title}</h4>
+                      </div>
+                      <p className={styles.moduleDesc}>{mod.desc}</p>
+                      <ul className={styles.subFeatures}>
+                        {mod.features.map((feat) => (
+                          <li key={feat}>
+                            <CheckCircle2 size={13} className={styles.checkIcon} />
+                            <span>{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* YimzaEdu Platform Details */}
+          {activeTab === "edu" && (
+            <div className={styles.platformDetails}>
+              <div className={styles.platformHeader}>
+                <div className={styles.platformLogoCol}>
+                  <Image 
+                    src="/YimzaEdu.jpeg" 
+                    alt="YimzaEdu SMS Logo" 
+                    width={180} 
+                    height={180} 
+                    className={styles.productLogo}
+                  />
+                  <div className={styles.accentBadge}>
+                    <GraduationCap size={14} />
+                    <span>Next-Gen Academic Engine</span>
+                  </div>
+                </div>
+                <div className={styles.platformDescCol}>
+                  <span className={styles.tag}>Educational Portal</span>
+                  <h3 className={styles.platformName}>YimzaEdu SMS</h3>
+                  <p className={styles.platformText}>
+                    YimzaEdu is a robust school information system engineered to unify administrators, teachers, parents, and students. By automating tuition invoicing, gradebook compilations, and parent attendance alerts, it allows educational institutions to refocus resources on pedagogical success.
+                  </p>
+                </div>
+              </div>
+
+              {/* Modules Grid */}
+              <div className={styles.modulesGrid}>
+                {yimzaEduModules.map((mod) => {
+                  const Icon = mod.icon;
+                  return (
+                    <div key={mod.title} className={styles.moduleCard}>
+                      <div className={styles.moduleHeader}>
+                        <div className={styles.iconBox}>
+                          <Icon size={20} />
+                        </div>
+                        <h4>{mod.title}</h4>
+                      </div>
+                      <p className={styles.moduleDesc}>{mod.desc}</p>
+                      <ul className={styles.subFeatures}>
+                        {mod.features.map((feat) => (
+                          <li key={feat}>
+                            <CheckCircle2 size={13} className={styles.checkIcon} />
+                            <span>{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -212,7 +296,7 @@ export default function ProductsPage() {
               <div className={styles.wlIconBox}>
                 <BarChart3 size={22} />
               </div>
-              <h4>bespoke Reports</h4>
+              <h4>Bespoke Reports</h4>
               <p>We build customized reporting templates, metrics tracking grids, and key performance dashboards matching your audit requirements.</p>
             </div>
             
@@ -224,6 +308,29 @@ export default function ProductsPage() {
               <p>Enjoy direct priority server monitoring, technical system backups, updates patching, and ongoing advisory workshops.</p>
             </div>
           </div>
+
+          {/* White-Label Customization Process Roadmap */}
+          <div className={styles.processRoadmap}>
+            <h3 className={styles.roadmapTitle}>Rebranding & Customization Journey</h3>
+            <div className={styles.roadmapSteps}>
+              {[
+                { t: "1. Audit Consultation", d: "We review your business logic, specific department workflows, and brand identity guides." },
+                { t: "2. Visual Mocking", d: "Our design team creates interactive mocks of the rebranded UI with your logo and colors." },
+                { t: "3. Modular Integration", d: "Yimza developers integrate custom database fields, local payment APIs, and unique modules." },
+                { t: "4. Sandbox Validation", d: "We deploy the custom build to a testing server where your staff runs audit verification checks." },
+                { t: "5. Private Cloud Launch", d: "Your platform is deployed on private, secure cloud instances with active backups and SLA monitoring." }
+              ].map((step, index) => (
+                <div key={step.t} className={styles.roadmapStep}>
+                  <div className={styles.roadmapStepNum}>{index + 1}</div>
+                  <div className={styles.roadmapStepInfo}>
+                    <h5>{step.t}</h5>
+                    <p>{step.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 

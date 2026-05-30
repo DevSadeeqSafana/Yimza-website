@@ -52,7 +52,7 @@
   border-radius: 50%;
   background: linear-gradient(135deg, #B89640, #8A6F2E);
   color: var(--navy);
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 14px;
   display: flex;

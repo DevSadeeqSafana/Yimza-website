@@ -31,7 +31,7 @@
   --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.98));
 
   /* Typography */
-  --font-display: 'Space Grotesk', 'Syne', sans-serif;
+  --font-display: 'Space Grotesk', 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
 
   /* Spacing */

@@ -24,7 +24,7 @@
   z-index: 1;
 }
 .heroTitle {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 800;
   line-height: 1.1;
@@ -56,7 +56,7 @@
   gap: 24px;
 }
 .infoTitle {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--white);
@@ -132,7 +132,7 @@
   box-shadow: 0 10px 30px rgba(0,0,0,0.02);
 }
 .formTitle {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--white);
@@ -205,7 +205,7 @@
   justify-content: center;
 }
 .successTitle {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--white);
