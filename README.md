@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Yimza Consult Website
 
-## Getting Started
+Next.js site for [Yimza Consult](https://www.yimzaconsult.com.ng) — IT consultancy, training, academic support, and management products (YimzaCare / YimzaEdu).
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local`:
 
-## Learn More
+```bash
+RESEND_API_KEY=re_xxx
+FORM_TO_EMAIL=info@yimzaconsult.com
+FORM_FROM_EMAIL=Yimza Consult <onboarding@resend.dev>
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Confirming form delivery (audit P-06)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Set `RESEND_API_KEY` and a verified `FORM_FROM_EMAIL` in Resend.
+2. Set `FORM_TO_EMAIL` to the monitored inbox.
+3. Submit `/contact` and `/training` forms.
+4. Confirm the email arrives (check spam). Reply-To is the visitor address.
+5. Without `RESEND_API_KEY`, local `next dev` logs submissions to the server console instead of sending.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Scripts
 
-## Deploy on Vercel
+- `npm run dev` — development server
+- `npm run build` — production build
+- `npm run start` — start production server
+- `npm run lint` — ESLint
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Client asset hand-off
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Still needed for production polish:
+
+- Real team photos and confirmed names/roles
+- Named testimonial photos / org logos
+- Product UI screenshots for YimzaCare and YimzaEdu
+- LinkedIn URL (if any)
+- Confirmed mailbox + Resend domain verification
+- Final legal review of Privacy / Terms / Training Terms drafts
