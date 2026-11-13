@@ -310,6 +310,24 @@
   margin-top: 12px;
 }
 
+.helper {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #64748B;
+  line-height: 1.45;
+}
+
+.formError {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #B91C1C;
+  background: rgba(185, 28, 28, 0.06);
+  border: 1px solid rgba(185, 28, 28, 0.18);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
 .successMessage {
   background: #F0FDF4;
   border: 1px solid #86EFAC;
