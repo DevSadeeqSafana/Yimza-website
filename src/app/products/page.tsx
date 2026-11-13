@@ -136,7 +136,7 @@ export default function ProductsPage() {
 
           {/* YimzaCare Platform Details */}
           {activeTab === "care" && (
-            <div className={styles.platformDetails}>
+            <div className={styles.platformDetails} id="yimzacare">
               <div className={styles.platformHeader}>
                 <div className={styles.platformLogoCol}>
                   <Image 
@@ -149,7 +149,7 @@ export default function ProductsPage() {
                   />
                   <div className={styles.accentBadge}>
                     <Shield size={14} />
-                    <span>Secure & HIPAA-Compliant</span>
+                    <span>Built for Nigerian healthcare workflows</span>
                   </div>
                 </div>
                 <div className={styles.platformDescCol}>
@@ -191,7 +191,7 @@ export default function ProductsPage() {
 
           {/* YimzaEdu Platform Details */}
           {activeTab === "edu" && (
-            <div className={styles.platformDetails}>
+            <div className={styles.platformDetails} id="yimzaedu">
               <div className={styles.platformHeader}>
                 <div className={styles.platformLogoCol}>
                   <Image 
@@ -281,7 +281,7 @@ export default function ProductsPage() {
                 <Smartphone size={22} />
               </div>
               <h4>Multi-Device Layout</h4>
-              <p>Your custom system runs flawlessly across smartphones, tablets, laptops, and desktop browsers with reactive layouts.</p>
+              <p>Responsive layouts for smartphones, tablets, laptops, and desktops — validated with your team during sandbox testing.</p>
             </div>
             
             <div className={styles.wlCard}>
@@ -334,15 +334,68 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Product preview placeholders */}
+      <section className={styles.previewSection}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <span className="section-label">See the product</span>
+            <div className="gold-line center" />
+            <h2 className="section-title" style={{ textAlign: "center" }}>
+              Screens &amp; <span>demo walkthroughs</span>
+            </h2>
+            <p className="section-subtitle" style={{ margin: "16px auto 0", textAlign: "center" }}>
+              Screenshot slots below are ready for real product imagery. Book a live demo for a guided tour.
+            </p>
+          </div>
+          <div className={styles.previewGrid}>
+            {[
+              "Patient dashboard placeholder",
+              "Appointments board placeholder",
+              "Student portal placeholder",
+              "Gradebook view placeholder",
+            ].map((label) => (
+              <div key={label} className={styles.previewFrame}>
+                <Laptop size={28} />
+                <span>{label}</span>
+              </div>
+            ))}
+          </div>
+          <div className={styles.deployments}>
+            <h3>Deployments</h3>
+            <p>
+              Case studies and client logos will appear here once supplied. Until then, request a
+              reference conversation during your demo.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className={styles.cta}>
         <div className="container">
           <div className={styles.ctaInner}>
-            <h2>Ready to Adapt Yimza Platforms to Your Business Needs?</h2>
-            <p>Our expert developers are on standby to deploy a rebranded, highly functional instance of YimzaCare or YimzaEdu tailored specifically to your organization.</p>
+            <h2>Ready to see YimzaCare or YimzaEdu in action?</h2>
+            <p>
+              Book a live demo tailored to your hospital or school workflows, or speak with an
+              architect about white-label deployment.
+            </p>
             <div className={styles.ctaButtons}>
-              <Link href="/contact" className="btn btn-primary">Schedule a Live Demo</Link>
-              <Link href="/contact" className="btn btn-outline" style={{ borderColor: "var(--white)", color: "var(--white)" }}>Talk to an IT Architect</Link>
+              <Link
+                href={
+                  activeTab === "care"
+                    ? "/contact?intent=demo-care"
+                    : "/contact?intent=demo-edu"
+                }
+                className="btn btn-primary"
+              >
+                Schedule a live demo
+              </Link>
+              <Link
+                href="/contact?intent=architect"
+                className="btn btn-outline"
+                style={{ borderColor: "var(--white)", color: "var(--white)" }}
+              >
+                Talk to an IT architect
+              </Link>
             </div>
           </div>
         </div>
