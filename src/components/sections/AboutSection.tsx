@@ -22,8 +22,8 @@ export default function AboutSection() {
             <div className={styles.imageStack}>
               <div className={styles.imagePrimary}>
                 <Image
-                  src="/logo.jpeg"
-                  alt="Yimza Consult Team"
+                  src="/training_hero.png"
+                  alt="Yimza Consult training and delivery context"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   style={{ objectFit: "cover" }}
@@ -69,8 +69,8 @@ export default function AboutSection() {
             </h2>
 
             <p className={styles.description}>
-              Yimza IT Consultancy Services is a dynamic firm dedicated to equipping individuals,
-              institutions, and organizations with the tools to thrive in today&apos;s digital world.
+              Yimza Consult is a dynamic firm dedicated to equipping individuals,
+              institutions, and organisations with the tools to thrive in today&apos;s digital world.
               Through tailored training, innovative research, academic support, and expert IT
               consultancy, we transform ideas into impactful solutions.
             </p>

@@ -1,11 +1,11 @@
-import { TrendingUp, Users, Award, Globe } from "lucide-react";
+import { MapPin, Layers, Users, Award } from "lucide-react";
 import styles from "./StatsSection.module.css";
 
 const stats = [
-  { icon: Users, value: "500+", label: "Professionals Trained", desc: "Across Nigeria and Africa" },
-  { icon: Award, value: "4+", label: "Core Service Areas", desc: "Comprehensive IT solutions" },
-  { icon: TrendingUp, value: "98%", label: "Client Satisfaction", desc: "Consistently delivering value" },
-  { icon: Globe, value: "3+", label: "Years of Excellence", desc: "Trusted by institutions" },
+  { icon: Users, value: "500+", label: "Professionals trained", desc: "Across Nigeria programmes" },
+  { icon: Layers, value: "4", label: "Core service areas", desc: "Training, R&D, academic, IT" },
+  { icon: MapPin, value: "3", label: "Delivery locations", desc: "Gusau · Abuja · Online" },
+  { icon: Award, value: "Yimza", label: "Training certificate", desc: "Issued on programme completion" },
 ];
 
 export default function StatsSection() {
@@ -16,7 +16,7 @@ export default function StatsSection() {
           {stats.map(({ icon: Icon, value, label, desc }) => (
             <div key={label} className={styles.card}>
               <div className={styles.iconWrap}>
-                <Icon size={22} />
+                <Icon size={20} />
               </div>
               <div className={styles.value}>{value}</div>
               <div className={styles.label}>{label}</div>

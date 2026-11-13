@@ -24,7 +24,7 @@ const products = [
     id: "yimzaedu",
     tag: "School Management",
     title: "YimzaEdu (SMS)",
-    desc: "An robust, interactive School Management System enabling educational institutions to streamline admissions, manage academics, track finance, and support student success. Easy to white-label and customize.",
+    desc: "A robust, interactive School Management System enabling educational institutions to streamline admissions, manage academics, track finance, and support student success. Easy to white-label and customise.",
     icon: GraduationCap,
     features: [
       "Student & Teacher Portals",
