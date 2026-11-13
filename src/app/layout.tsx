@@ -2,20 +2,44 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Yimza Consult | IT Consultancy, Training & Academic Support",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: `${siteConfig.brand} | ${siteConfig.tagline}`,
+    template: `%s | ${siteConfig.brand}`,
+  },
   description:
-    "Yimza IT Consultancy Services empowers individuals, institutions, and organizations with expert IT solutions, training workshops, academic support, and innovative R&D across Africa.",
-  keywords:
-    "IT consultancy Nigeria, tech training, academic support, data analytics, cybersecurity training, AI solutions, digital transformation",
+    "Yimza Consult empowers individuals, institutions, and organisations with IT consultancy, training workshops, academic support, and management software across Nigeria.",
+  keywords: [
+    "IT consultancy Nigeria",
+    "tech training Gusau",
+    "academic support",
+    "YimzaCare",
+    "YimzaEdu",
+    "digital transformation Abuja",
+  ],
   openGraph: {
-    title: "Yimza Consult | IT Consultancy, Training & Academic Support",
+    title: `${siteConfig.brand} | ${siteConfig.tagline}`,
     description:
-      "Empowering growth through innovative IT solutions, expert training, and academic support.",
-    url: "https://yimzaconsult.com.ng",
-    siteName: "Yimza Consult",
+      "Practical IT consultancy, expert training, and management systems for schools and hospitals.",
+    url: siteConfig.url,
+    siteName: siteConfig.brand,
     type: "website",
+    images: [{ url: "/logo.jpeg", width: 512, height: 512, alt: siteConfig.brand }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.brand} | ${siteConfig.tagline}`,
+    description:
+      "Practical IT consultancy, expert training, and management systems for schools and hospitals.",
+    images: ["/logo.jpeg"],
+  },
+  icons: {
+    icon: "/logo.jpeg",
+    apple: "/logo.jpeg",
   },
 };
 
@@ -24,18 +48,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body>
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <WhatsAppFloat />
       </body>
     </html>
   );
