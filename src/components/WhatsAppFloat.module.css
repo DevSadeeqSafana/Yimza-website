@@ -1,0 +1,39 @@
+.float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 1100;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(37, 211, 102, 0.45);
+}
+
+.label {
+  display: inline;
+}
+
+@media (max-width: 640px) {
+  .float {
+    right: 16px;
+    bottom: 16px;
+    padding: 14px;
+  }
+
+  .label {
+    display: none;
+  }
+}
