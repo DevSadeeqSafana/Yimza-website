@@ -225,6 +225,66 @@
   gap: 12px;
 }
 
+.teamHeader {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.teamNote {
+  margin: 12px auto 0;
+  max-width: 480px;
+  color: var(--ink-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.teamCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+
+.teamPhoto {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  color: var(--accent-dark);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.teamName {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.teamRole {
+  font-size: 13px;
+  color: var(--ink-secondary);
+}
+
+.teamLoc {
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-top: 2px;
+}
+
 .faqQ {
   font-family: var(--font-display);
   font-size: 15px;
@@ -245,8 +305,10 @@
   .mvGrid { grid-template-columns: 1fr; }
   .valuesGrid { grid-template-columns: repeat(2, 1fr); }
   .faqGrid { grid-template-columns: 1fr; }
+  .teamGrid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
   .valuesGrid { grid-template-columns: 1fr; }
+  .teamGrid { grid-template-columns: 1fr; }
 }

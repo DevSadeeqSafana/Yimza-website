@@ -5,13 +5,26 @@ import {
   Target, Eye, CheckCircle2, ArrowRight,
   Users, Lightbulb, Handshake, Globe
 } from "lucide-react";
+import PageCta from "@/components/PageCta";
+import { siteConfig } from "@/lib/site";
 import styles from "./about.module.css";
 
 export const metadata: Metadata = {
-  title: "About Us | Yimza IT Consultancy Services",
+  title: "About Us",
   description:
-    "Learn about Yimza Consult — our mission, vision, and commitment to empowering individuals and organizations through IT solutions, training, and academic support across Africa.",
+    "Learn about Yimza Consult — mission, vision, and how we deliver IT consultancy, training, and academic support across Nigeria.",
+  openGraph: {
+    title: `About Us | ${siteConfig.brand}`,
+    url: `${siteConfig.url}/about`,
+  },
 };
+
+const teamPlaceholders = [
+  { name: "Leadership", role: "Managing Director", location: "Abuja" },
+  { name: "Training Lead", role: "Programmes", location: "Gusau" },
+  { name: "Product Lead", role: "YimzaCare / YimzaEdu", location: "Remote" },
+  { name: "Academic Lead", role: "Research Support", location: "Abuja" },
+];
 
 const values = [
   { icon: Lightbulb, title: "Innovation", desc: "We embrace emerging technologies and creative thinking to solve complex challenges." },
@@ -57,11 +70,16 @@ export default function AboutPage() {
         <div className="container">
           <div className={styles.whatGrid}>
             <div className={styles.whatImage}>
-              <Image src="/logo.jpeg" alt="Yimza Consult" fill style={{ objectFit: "cover" }} />
+              <Image
+                src="/training_hero.png"
+                alt="Yimza Consult delivery context"
+                fill
+                style={{ objectFit: "cover" }}
+              />
               <div className={styles.whatOverlay} />
               <div className={styles.whatBadge}>
                 <span className={styles.whatBadgeNum}>3+</span>
-                <span className={styles.whatBadgeLabel}>Years Serving Africa</span>
+                <span className={styles.whatBadgeLabel}>Years serving clients</span>
               </div>
             </div>
 
@@ -72,8 +90,8 @@ export default function AboutPage() {
                 Transforming Ideas Into <span>Impactful Solutions</span>
               </h2>
               <p style={{ color: "var(--text-secondary)", lineHeight: 1.9, fontSize: "1rem", marginTop: 16 }}>
-                Yimza IT Consultancy Services is a dynamic firm dedicated to equipping individuals,
-                institutions, and organizations with the tools to thrive in today&apos;s digital world.
+                Yimza Consult is a dynamic firm dedicated to equipping individuals,
+                institutions, and organisations with the tools to thrive in today&apos;s digital world.
                 Through tailored training, innovative research, academic support, and expert IT
                 consultancy, we transform ideas into impactful solutions that drive personal,
                 educational, and business success.
@@ -158,8 +176,42 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* Team placeholders */}
       <section className="section" style={{ background: "var(--navy)" }}>
+        <div className="container">
+          <div className={styles.teamHeader}>
+            <span className="section-label">People</span>
+            <div className="gold-line center" />
+            <h2 className="section-title" style={{ textAlign: "center" }}>
+              Meet the <span>team</span>
+            </h2>
+            <p className={styles.teamNote}>
+              Photo slots ready for real headshots. Replace names and roles when assets arrive.
+            </p>
+          </div>
+          <div className={styles.teamGrid}>
+            {teamPlaceholders.map((member) => (
+              <div key={member.role} className={styles.teamCard}>
+                <div className={styles.teamPhoto} aria-hidden="true">
+                  {member.name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")
+                    .slice(0, 2)}
+                </div>
+                <div>
+                  <div className={styles.teamName}>{member.name}</div>
+                  <div className={styles.teamRole}>{member.role}</div>
+                  <div className={styles.teamLoc}>{member.location}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section" style={{ background: "var(--navy-light)" }}>
         <div className="container">
           <div className={styles.faqHeader}>
             <span className="section-label">FAQ</span>
@@ -178,6 +230,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <PageCta variant="about" />
     </>
   );
 }
