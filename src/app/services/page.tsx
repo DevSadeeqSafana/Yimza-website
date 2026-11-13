@@ -4,11 +4,18 @@ import {
   GraduationCap, FlaskConical, BookOpen, Network,
   CheckCircle2, ArrowRight, Sparkles, Laptop, ShieldCheck, Database, LayoutGrid
 } from "lucide-react";
+import PageCta from "@/components/PageCta";
+import { siteConfig } from "@/lib/site";
 import styles from "./services.module.css";
 
 export const metadata: Metadata = {
-  title: "Services | Yimza IT Consultancy Services",
-  description: "Explore Yimza Consult's full range of IT services: training, academic support, R&D, and IT consultancy.",
+  title: "Services",
+  description:
+    "Explore Yimza Consult services: training & workshops, research & development, academic support, and IT consultancy.",
+  openGraph: {
+    title: `Services | ${siteConfig.brand}`,
+    url: `${siteConfig.url}/services`,
+  },
 };
 
 const services = [
@@ -272,9 +279,9 @@ export default function ServicesPage() {
             </div>
             <div className={styles.statsGrid}>
               {[
-                { v: "500+", l: "Professionals Trained" },
-                { v: "100%", l: "SLA Custom Solutions" },
-                { v: "24/7", l: "Architect Support" }
+                { v: "500+", l: "Professionals trained" },
+                { v: "4", l: "Core service areas" },
+                { v: "1bd", l: "Typical reply window" },
               ].map(({ v, l }) => (
                 <div key={l} className={styles.statBox}>
                   <div className={styles.statVal}>{v}</div>
@@ -285,6 +292,8 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <PageCta variant="services" />
     </div>
   );
 }
