@@ -87,6 +87,38 @@
   transform: translateX(4px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.03), 0 0 15px var(--gold-glow);
 }
+.contactCardPrimary {
+  border-color: rgba(37, 211, 102, 0.35);
+  background: rgba(37, 211, 102, 0.06);
+}
+.intentNote {
+  margin: -16px 0 8px;
+  font-size: 13px;
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+.privacyNote {
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+.privacyNote a {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+.error {
+  font-size: 14px;
+  color: var(--danger);
+  background: rgba(185, 28, 28, 0.06);
+  border: 1px solid rgba(185, 28, 28, 0.2);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.successActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
 .contactCardIcon {
   width: 42px; height: 42px;
   border-radius: 10px;

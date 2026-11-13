@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Yimza IT Consultancy Services",
+  title: "Contact Us",
   description:
-    "Get in touch with Yimza Consult. Reach out for IT consultancy, training, academic support, or R&D inquiries. We respond within 24 business hours.",
+    "Contact Yimza Consult via WhatsApp, phone, or email for IT consultancy, training, demos, and academic support. Gusau & Abuja.",
 };
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
